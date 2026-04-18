@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMP SMM ULTRA</title>
+  <title>IMP SMM PANEL ULTRA</title>
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -16,8 +15,7 @@
       color: white;
       overflow-x: hidden;
 
-      /* Animated neon background */
-      background: linear-gradient(-45deg, #000, #001f2f, #0a0a2a, #000);
+      background: linear-gradient(-45deg, #000, #001a1a, #0a0a2a, #000);
       background-size: 400% 400%;
       animation: bg 10s ease infinite;
     }
@@ -28,34 +26,27 @@
       100% {background-position: 0% 50%;}
     }
 
-    /* HEADER */
     .header {
       text-align: center;
       padding: 30px;
     }
 
     .header h1 {
-      font-size: 36px;
       color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
+      font-size: 34px;
+      text-shadow: 0 0 10px #00e5ff;
     }
 
-    .header p {
-      color: #aaa;
-    }
-
-    /* GRID */
     .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
       gap: 20px;
+      padding: 20px;
     }
 
-    /* GLASS CARD */
     .card {
-      width: 320px;
+      width: 340px;
       padding: 20px;
       border-radius: 18px;
 
@@ -64,26 +55,28 @@
 
       border: 1px solid rgba(255,255,255,0.1);
 
-      box-shadow:
-        0 0 15px rgba(0,229,255,0.2),
-        inset 0 0 10px rgba(255,255,255,0.05);
+      box-shadow: 0 0 20px rgba(0,229,255,0.2);
 
       transform: perspective(900px) rotateX(3deg);
       transition: 0.4s;
+      animation: float 4s ease-in-out infinite;
     }
 
     .card:hover {
       transform: perspective(900px) rotateX(0deg) scale(1.05);
-      box-shadow:
-        0 0 25px #00e5ff,
-        0 0 50px rgba(0,229,255,0.3);
+      box-shadow: 0 0 30px #00e5ff;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0px) rotateX(3deg);}
+      50% {transform: translateY(-6px) rotateX(3deg);}
+      100% {transform: translateY(0px) rotateX(3deg);}
     }
 
     .title {
       font-size: 22px;
       color: #00e5ff;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px #00e5ff;
     }
 
     .price {
@@ -94,14 +87,24 @@
 
     .note {
       font-size: 12px;
-      color: #bbb;
+      color: #aaa;
       margin-top: 8px;
     }
 
-    /* BUTTON */
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
     .btn {
       display: block;
-      margin-top: 15px;
+      margin-top: 12px;
       padding: 12px;
       text-align: center;
       border-radius: 12px;
@@ -110,7 +113,7 @@
       color: black;
       font-weight: bold;
       text-decoration: none;
-
+      cursor: pointer;
       transition: 0.3s;
     }
 
@@ -119,21 +122,9 @@
       box-shadow: 0 0 20px #00e5ff;
     }
 
-    /* FLOAT EFFECT */
-    .card {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% {transform: translateY(0px) rotateX(3deg);}
-      50% {transform: translateY(-8px) rotateX(3deg);}
-      100% {transform: translateY(0px) rotateX(3deg);}
-    }
-
-    /* FOOTER */
     .footer {
       text-align: center;
-      padding: 30px;
+      padding: 25px;
       color: #777;
     }
 
@@ -143,8 +134,8 @@
 <body>
 
 <div class="header">
-  <h1>IMP SMM ULTRA 🚀</h1>
-  <p>Neon • Glass • 3D Growth Panel</p>
+  <h1>IMP SMM PANEL ULTRA 🚀</h1>
+  <p>Neon • Glass • 3D Growth System</p>
 </div>
 
 <div class="container">
@@ -153,22 +144,19 @@
   <div class="card">
     <div class="title">📸 Instagram Followers</div>
 
-    ⏳ Start: 0–5 mins (max 1 hour)<br>
+    ⏳ Start: 0–5 mins<br>
     ⚡ Speed: 50K+/DAY<br>
-    ⭐ Quality: Real Profiles<br>
+    ⭐ Real Profiles<br>
     📉 Drop: Non Drop<br>
-    ♻ Refill: Lifetime<br><br>
-
-    🔗 Profile URL required
+    ♻ Lifetime Refill<br><br>
 
     <div class="price">💰 199 PKR / 1000</div>
 
     <div class="note">
-      ⚠ Speed & start may vary<br>
-      ⚠ Drop possible but refill provided
+      ⚠ Speed may vary
     </div>
 
-    <a class="btn" href="https://instagram.com" target="_blank">ORDER NOW</a>
+    <a class="btn" href="https://instagram.com" target="_blank">ORDER</a>
   </div>
 
   <!-- TIKTOK -->
@@ -176,42 +164,66 @@
     <div class="title">🎵 TikTok Likes</div>
 
     ⏳ Start: 0–5 mins<br>
-    ⚡ Speed: 10K/DAY<br>
-    ⭐ HQ Real Profiles<br>
-    📉 Drop: 0% Stable<br>
-    ♻ Refill: 30 Days<br><br>
-
-    🔗 Video URL required
+    ⚡ Speed: 10K/day<br>
+    ⭐ HQ Real<br>
+    📉 Stable<br>
+    ♻ 30 Days Refill<br><br>
 
     <div class="price">💰 51 PKR / 1000</div>
 
-    <div class="note">
-      ⚠ 30-day refill guarantee
-    </div>
-
-    <a class="btn" href="https://tiktok.com" target="_blank">ORDER NOW</a>
+    <a class="btn" href="https://tiktok.com" target="_blank">ORDER</a>
   </div>
 
-  <!-- SUPPORT -->
+  <!-- ORDER FORM -->
   <div class="card">
-    <div class="title">📞 Support</div>
+    <div class="title">📦 Auto Order Form</div>
 
-    More services or custom orders?<br><br>
+    <input id="name" placeholder="Your Name">
+    <input id="service" placeholder="Service Name">
+    <input id="link" placeholder="Profile / Video Link">
+    <input id="qty" placeholder="Quantity">
 
-    <a class="btn" href="https://wa.me/923000000000" target="_blank">
-      💬 CONTACT NOW
+    <button class="btn" onclick="sendOrder()">🚀 Submit Order</button>
+
+    <br>
+
+    <a class="btn" href="https://wa.me/923451747872" target="_blank">
+      📲 Chat Admin
     </a>
 
-    <a class="btn" href="https://t.me/yourchannel" target="_blank">
-      📢 JOIN CHANNEL
+    <a class="btn" href="https://whatsapp.com/channel/0029VbB0EHkCMY0Cs3Rp7u3n" target="_blank">
+      📢 WhatsApp Channel
     </a>
   </div>
 
 </div>
 
 <div class="footer">
-  © IMP SMM ULTRA PANEL 🚀 | All Rights Reserved
+  © IMP SMM PANEL ULTRA 🚀
 </div>
+
+<script>
+function sendOrder() {
+  let name = document.getElementById("name").value;
+  let service = document.getElementById("service").value;
+  let link = document.getElementById("link").value;
+  let qty = document.getElementById("qty").value;
+
+  let msg =
+`🔥 NEW ORDER - IMP SMM PANEL
+--------------------
+👤 Name: ${name}
+⚙ Service: ${service}
+🔗 Link: ${link}
+📦 Qty: ${qty}
+--------------------
+🚀 Please confirm`;
+
+  let url = "https://wa.me/923451747872?text=" + encodeURIComponent(msg);
+
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
