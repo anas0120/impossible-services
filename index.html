@@ -1,94 +1,217 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMP SMM Panel</title>
+  <title>IMP SMM ULTRA</title>
 
   <style>
-    body {
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial;
-      background: #111;
+    }
+
+    body {
       color: white;
+      overflow-x: hidden;
+
+      /* Animated neon background */
+      background: linear-gradient(-45deg, #000, #001f2f, #0a0a2a, #000);
+      background-size: 400% 400%;
+      animation: bg 10s ease infinite;
+    }
+
+    @keyframes bg {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* HEADER */
+    .header {
       text-align: center;
+      padding: 30px;
     }
 
-    .box {
-      background: #222;
-      margin: 10px;
-      padding: 15px;
-      border-radius: 10px;
+    .header h1 {
+      font-size: 36px;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff;
     }
 
-    input {
-      padding: 10px;
-      margin: 5px;
-      width: 200px;
+    .header p {
+      color: #aaa;
     }
 
-    button {
-      padding: 10px;
-      background: green;
-      color: white;
-      border: none;
-      cursor: pointer;
+    /* GRID */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
     }
+
+    /* GLASS CARD */
+    .card {
+      width: 320px;
+      padding: 20px;
+      border-radius: 18px;
+
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(15px);
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      box-shadow:
+        0 0 15px rgba(0,229,255,0.2),
+        inset 0 0 10px rgba(255,255,255,0.05);
+
+      transform: perspective(900px) rotateX(3deg);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: perspective(900px) rotateX(0deg) scale(1.05);
+      box-shadow:
+        0 0 25px #00e5ff,
+        0 0 50px rgba(0,229,255,0.3);
+    }
+
+    .title {
+      font-size: 22px;
+      color: #00e5ff;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    .price {
+      color: #00ff99;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #bbb;
+      margin-top: 8px;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: block;
+      margin-top: 15px;
+      padding: 12px;
+      text-align: center;
+      border-radius: 12px;
+
+      background: linear-gradient(90deg, #00e5ff, #00ff99);
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #00e5ff;
+    }
+
+    /* FLOAT EFFECT */
+    .card {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0px) rotateX(3deg);}
+      50% {transform: translateY(-8px) rotateX(3deg);}
+      100% {transform: translateY(0px) rotateX(3deg);}
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+    }
+
   </style>
 </head>
 
 <body>
 
-<h1>🔥 IMP SMM PANEL</h1>
-<p>Fast | Cheap | Trusted Services</p>
-
-<hr>
-
-<!-- TIKTOK FOLLOWERS -->
-<div class="box">
-  <h2>📱 TikTok Followers</h2>
-  <p>Price: Rs 500 / 1000</p>
-  <input id="q1" placeholder="Quantity">
-  <button onclick="order('TikTok Followers',500,'q1')">Order</button>
+<div class="header">
+  <h1>IMP SMM ULTRA 🚀</h1>
+  <p>Neon • Glass • 3D Growth Panel</p>
 </div>
 
-<!-- TIKTOK LIKES -->
-<div class="box">
-  <h2>❤️ TikTok Likes</h2>
-  <p>Price: Rs 200 / 1000</p>
-  <input id="q2" placeholder="Quantity">
-  <button onclick="order('TikTok Likes',200,'q2')">Order</button>
+<div class="container">
+
+  <!-- INSTAGRAM -->
+  <div class="card">
+    <div class="title">📸 Instagram Followers</div>
+
+    ⏳ Start: 0–5 mins (max 1 hour)<br>
+    ⚡ Speed: 50K+/DAY<br>
+    ⭐ Quality: Real Profiles<br>
+    📉 Drop: Non Drop<br>
+    ♻ Refill: Lifetime<br><br>
+
+    🔗 Profile URL required
+
+    <div class="price">💰 199 PKR / 1000</div>
+
+    <div class="note">
+      ⚠ Speed & start may vary<br>
+      ⚠ Drop possible but refill provided
+    </div>
+
+    <a class="btn" href="https://instagram.com" target="_blank">ORDER NOW</a>
+  </div>
+
+  <!-- TIKTOK -->
+  <div class="card">
+    <div class="title">🎵 TikTok Likes</div>
+
+    ⏳ Start: 0–5 mins<br>
+    ⚡ Speed: 10K/DAY<br>
+    ⭐ HQ Real Profiles<br>
+    📉 Drop: 0% Stable<br>
+    ♻ Refill: 30 Days<br><br>
+
+    🔗 Video URL required
+
+    <div class="price">💰 51 PKR / 1000</div>
+
+    <div class="note">
+      ⚠ 30-day refill guarantee
+    </div>
+
+    <a class="btn" href="https://tiktok.com" target="_blank">ORDER NOW</a>
+  </div>
+
+  <!-- SUPPORT -->
+  <div class="card">
+    <div class="title">📞 Support</div>
+
+    More services or custom orders?<br><br>
+
+    <a class="btn" href="https://wa.me/923000000000" target="_blank">
+      💬 CONTACT NOW
+    </a>
+
+    <a class="btn" href="https://t.me/yourchannel" target="_blank">
+      📢 JOIN CHANNEL
+    </a>
+  </div>
+
 </div>
 
-<!-- INSTAGRAM FOLLOWERS -->
-<div class="box">
-  <h2>📸 Instagram Followers</h2>
-  <p>Price: Rs 700 / 1000</p>
-  <input id="q3" placeholder="Quantity">
-  <button onclick="order('Instagram Followers',700,'q3')">Order</button>
+<div class="footer">
+  © IMP SMM ULTRA PANEL 🚀 | All Rights Reserved
 </div>
-
-<script>
-
-function order(service, price, qtyId){
-
-  let qty = document.getElementById(qtyId).value;
-
-  if(!qty){
-    alert("Quantity enter karo");
-    return;
-  }
-
-  let total = (price * qty) / 1000;
-
-  let msg =
-  "🔥 NEW ORDER\n" +
-  "Service: " + service + "\n" +
-  "Quantity: " + qty + "\n" +
-  "Total: Rs " + total;
-
-  window.location.href =
-  "https://wa.me/923451747872?text=" + encodeURIComponent(msg);
-}
-
-</script>
 
 </body>
 </html>
