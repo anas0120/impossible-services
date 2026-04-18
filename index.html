@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IMP SMM PANEL ULTRA</title>
+  <title>IMP SMM ULTRA 3D</title>
 
   <style>
     *{
@@ -14,20 +14,53 @@
     body{
       color:white;
       overflow-x:hidden;
-
-      /* 3D ANIMATED BACKGROUND */
-      background: radial-gradient(circle at top, #001a1a, #000),
-                  linear-gradient(-45deg,#000,#001f2f,#0a0a2a,#000);
-      background-size:400% 400%;
-      animation:bg 12s ease infinite;
+      background:#000;
     }
 
-    @keyframes bg{
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
+    /* ===== HEAVY 3D BACKGROUND ===== */
+    .scene{
+      position:fixed;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      z-index:-1;
+      background:radial-gradient(circle at center,#001a1a,#000);
+      overflow:hidden;
     }
 
+    .scene::before,
+    .scene::after{
+      content:"";
+      position:absolute;
+      width:450px;
+      height:450px;
+      border-radius:50%;
+      filter:blur(120px);
+      opacity:0.7;
+      animation:float 10s infinite ease-in-out;
+    }
+
+    .scene::before{
+      background:#00e5ff;
+      top:10%;
+      left:10%;
+    }
+
+    .scene::after{
+      background:#00ff99;
+      bottom:10%;
+      right:10%;
+      animation-delay:3s;
+    }
+
+    @keyframes float{
+      0%{transform:translate(0,0) scale(1);}
+      50%{transform:translate(60px,-60px) scale(1.2);}
+      100%{transform:translate(0,0) scale(1);}
+    }
+
+    /* HEADER */
     .header{
       text-align:center;
       padding:30px;
@@ -39,6 +72,7 @@
       text-shadow:0 0 10px #00e5ff;
     }
 
+    /* CONTAINER */
     .container{
       display:flex;
       flex-wrap:wrap;
@@ -47,6 +81,7 @@
       padding:20px;
     }
 
+    /* CARD */
     .card{
       width:340px;
       padding:20px;
@@ -56,20 +91,19 @@
       backdrop-filter:blur(15px);
 
       border:1px solid rgba(255,255,255,0.1);
-
       box-shadow:0 0 20px rgba(0,229,255,0.2);
 
       transform:perspective(900px) rotateX(3deg);
       transition:0.4s;
-      animation:float 4s ease-in-out infinite;
+      animation:floatCard 4s ease-in-out infinite;
     }
 
     .card:hover{
       transform:perspective(900px) rotateX(0deg) scale(1.05);
-      box-shadow:0 0 30px #00e5ff;
+      box-shadow:0 0 35px #00e5ff;
     }
 
-    @keyframes float{
+    @keyframes floatCard{
       0%{transform:translateY(0px) rotateX(3deg);}
       50%{transform:translateY(-6px) rotateX(3deg);}
       100%{transform:translateY(0px) rotateX(3deg);}
@@ -112,20 +146,17 @@
       box-shadow:0 0 20px #00e5ff;
     }
 
-    .note{
-      font-size:12px;
-      color:#aaa;
-      margin-top:8px;
-    }
-
   </style>
 </head>
 
 <body>
 
+<div class="scene"></div>
+
+<!-- HEADER -->
 <div class="header">
   <h1>IMP SMM PANEL ULTRA 🚀</h1>
-  <p>Neon • Glass • 3D Auto System</p>
+  <p>Heavy 3D • Glass • Auto System</p>
 </div>
 
 <div class="container">
@@ -134,12 +165,12 @@
   <div class="card">
     <div class="title">📸 Instagram Followers</div>
 
-    ⏳ Start: 0–5 mins<br>
+    ⏳ Start: 0–5 min<br>
     ⚡ Speed: 50K+/DAY<br>
     ⭐ Real Profiles<br>
     ♻ Lifetime Refill<br><br>
 
-    <input id="ig_name" placeholder="Your Name">
+    <input id="ig_name" placeholder="Name">
     <input id="ig_link" placeholder="Instagram Link">
     <input id="ig_qty" placeholder="Quantity">
 
@@ -150,26 +181,26 @@
   <div class="card">
     <div class="title">🎵 TikTok Likes</div>
 
-    ⏳ Start: 0–5 mins<br>
+    ⏳ Start: 0–5 min<br>
     ⚡ Speed: 10K/day<br>
     ⭐ HQ Real<br>
     ♻ 30 Days Refill<br><br>
 
-    <input id="tt_name" placeholder="Your Name">
+    <input id="tt_name" placeholder="Name">
     <input id="tt_link" placeholder="Video Link">
     <input id="tt_qty" placeholder="Quantity">
 
     <div class="btn" onclick="ttOrder()">🚀 ORDER NOW</div>
   </div>
 
-  <!-- MORE SERVICES -->
+  <!-- MORE -->
   <div class="card">
-    <div class="title">📢 Need More Services?</div>
+    <div class="title">📢 More Services</div>
 
-    Custom orders, bulk deals, premium services available.<br><br>
+    Custom + bulk orders available<br><br>
 
     <a class="btn"
-    href="https://wa.me/923451747872?text=Hi%20I%20want%20more%20services%20details"
+    href="https://wa.me/923451747872?text=Need%20more%20services"
     target="_blank">
     💬 CONTACT ADMIN
     </a>
@@ -177,7 +208,7 @@
     <a class="btn"
     href="https://whatsapp.com/channel/0029VbB0EHkCMY0Cs3Rp7u3n"
     target="_blank">
-    📢 JOIN CHANNEL
+    📢 CHANNEL
     </a>
   </div>
 
@@ -191,15 +222,15 @@ function igOrder(){
   let l=document.getElementById("ig_link").value;
   let q=document.getElementById("ig_qty").value;
 
+  let rate=199;
+  let total=(q/1000)*rate;
+
   let msg=
 `🔥 INSTAGRAM ORDER
--------------------
-👤 Name: ${n}
-🔗 Link: ${l}
-📦 Qty: ${q}
-💰 Rate: 199 PKR / 1000
--------------------
-🚀 Start Order`;
+👤 ${n}
+🔗 ${l}
+📦 ${q}
+💰 Total: ${total.toFixed(2)} PKR`;
 
   window.open("https://wa.me/923451747872?text="+encodeURIComponent(msg));
 }
@@ -210,15 +241,15 @@ function ttOrder(){
   let l=document.getElementById("tt_link").value;
   let q=document.getElementById("tt_qty").value;
 
+  let rate=51;
+  let total=(q/1000)*rate;
+
   let msg=
 `🔥 TIKTOK ORDER
--------------------
-👤 Name: ${n}
-🔗 Link: ${l}
-📦 Qty: ${q}
-💰 Rate: 51 PKR / 1000
--------------------
-🚀 Start Order`;
+👤 ${n}
+🔗 ${l}
+📦 ${q}
+💰 Total: ${total.toFixed(2)} PKR`;
 
   window.open("https://wa.me/923451747872?text="+encodeURIComponent(msg));
 }
