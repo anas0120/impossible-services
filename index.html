@@ -14,9 +14,12 @@
     body{
       color:white;
       overflow-x:hidden;
-      background:linear-gradient(-45deg,#000,#001a1a,#0a0a2a,#000);
+
+      /* 3D ANIMATED BACKGROUND */
+      background: radial-gradient(circle at top, #001a1a, #000),
+                  linear-gradient(-45deg,#000,#001f2f,#0a0a2a,#000);
       background-size:400% 400%;
-      animation:bg 10s ease infinite;
+      animation:bg 12s ease infinite;
     }
 
     @keyframes bg{
@@ -25,19 +28,17 @@
       100%{background-position:0% 50%;}
     }
 
-    /* HEADER */
     .header{
       text-align:center;
-      padding:25px;
+      padding:30px;
     }
 
     .header h1{
+      font-size:36px;
       color:#00e5ff;
       text-shadow:0 0 10px #00e5ff;
-      font-size:34px;
     }
 
-    /* LAYOUT */
     .container{
       display:flex;
       flex-wrap:wrap;
@@ -46,15 +47,18 @@
       padding:20px;
     }
 
-    /* CARD */
     .card{
       width:340px;
       padding:20px;
-      border-radius:15px;
+      border-radius:16px;
+
       background:rgba(255,255,255,0.06);
       backdrop-filter:blur(15px);
+
       border:1px solid rgba(255,255,255,0.1);
+
       box-shadow:0 0 20px rgba(0,229,255,0.2);
+
       transform:perspective(900px) rotateX(3deg);
       transition:0.4s;
       animation:float 4s ease-in-out infinite;
@@ -77,13 +81,7 @@
       margin-bottom:10px;
     }
 
-    .price{
-      color:#00ff99;
-      font-weight:bold;
-      margin-top:10px;
-    }
-
-    input,select{
+    input{
       width:100%;
       padding:10px;
       margin:6px 0;
@@ -91,6 +89,7 @@
       border:none;
       background:rgba(255,255,255,0.1);
       color:white;
+      outline:none;
     }
 
     .btn{
@@ -99,6 +98,7 @@
       padding:12px;
       text-align:center;
       border-radius:12px;
+
       background:linear-gradient(90deg,#00e5ff,#00ff99);
       color:black;
       font-weight:bold;
@@ -112,10 +112,10 @@
       box-shadow:0 0 20px #00e5ff;
     }
 
-    .footer{
-      text-align:center;
-      padding:25px;
-      color:#888;
+    .note{
+      font-size:12px;
+      color:#aaa;
+      margin-top:8px;
     }
 
   </style>
@@ -123,13 +123,11 @@
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h1>IMP SMM PANEL ULTRA 🚀</h1>
-  <p>Neon • Glass • Auto System • 3D FX</p>
+  <p>Neon • Glass • 3D Auto System</p>
 </div>
 
-<!-- SERVICES -->
 <div class="container">
 
   <!-- INSTAGRAM -->
@@ -139,16 +137,13 @@
     ⏳ Start: 0–5 mins<br>
     ⚡ Speed: 50K+/DAY<br>
     ⭐ Real Profiles<br>
-    📉 Non Drop<br>
     ♻ Lifetime Refill<br><br>
 
-    <div class="price">💰 199 PKR / 1000</div>
+    <input id="ig_name" placeholder="Your Name">
+    <input id="ig_link" placeholder="Instagram Link">
+    <input id="ig_qty" placeholder="Quantity">
 
-    <a class="btn"
-    href="https://wa.me/923451747872?text=🔥%20INSTAGRAM%20ORDER%0A%0A👤%20Name:%0A🔗%20Profile:%0A📦%20Qty:%0A💰%20199%20PKR%0A%0A🚀%20Start%20Order"
-    target="_blank">
-    ORDER NOW
-    </a>
+    <div class="btn" onclick="igOrder()">🚀 ORDER NOW</div>
   </div>
 
   <!-- TIKTOK -->
@@ -158,69 +153,76 @@
     ⏳ Start: 0–5 mins<br>
     ⚡ Speed: 10K/day<br>
     ⭐ HQ Real<br>
-    📉 Stable<br>
     ♻ 30 Days Refill<br><br>
 
-    <div class="price">💰 51 PKR / 1000</div>
+    <input id="tt_name" placeholder="Your Name">
+    <input id="tt_link" placeholder="Video Link">
+    <input id="tt_qty" placeholder="Quantity">
+
+    <div class="btn" onclick="ttOrder()">🚀 ORDER NOW</div>
+  </div>
+
+  <!-- MORE SERVICES -->
+  <div class="card">
+    <div class="title">📢 Need More Services?</div>
+
+    Custom orders, bulk deals, premium services available.<br><br>
 
     <a class="btn"
-    href="https://wa.me/923451747872?text=🔥%20TIKTOK%20ORDER%0A%0A👤%20Name:%0A🔗%20Video:%0A📦%20Qty:%0A💰%2051%20PKR%0A%0A🚀%20Start%20Order"
+    href="https://wa.me/923451747872?text=Hi%20I%20want%20more%20services%20details"
     target="_blank">
-    ORDER NOW
+    💬 CONTACT ADMIN
+    </a>
+
+    <a class="btn"
+    href="https://whatsapp.com/channel/0029VbB0EHkCMY0Cs3Rp7u3n"
+    target="_blank">
+    📢 JOIN CHANNEL
     </a>
   </div>
 
-  <!-- PRICE CALCULATOR -->
-  <div class="card">
-    <div class="title">💰 Price Calculator</div>
-
-    <select id="service" onchange="calc()">
-      <option value="ig">Instagram (199 / 1000)</option>
-      <option value="tt">TikTok (51 / 1000)</option>
-    </select>
-
-    <input id="qty" placeholder="Enter Quantity" oninput="calc()">
-
-    <div class="price" id="result">Total: 0 PKR</div>
-
-    <a class="btn" href="https://wa.me/923451747872" target="_blank">
-      📲 Contact Admin
-    </a>
-
-    <a class="btn" href="https://whatsapp.com/channel/0029VbB0EHkCMY0Cs3Rp7u3n" target="_blank">
-      📢 WhatsApp Channel
-    </a>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  © IMP SMM PANEL ULTRA 🚀 | All Rights Reserved
 </div>
 
 <script>
-function calc(){
-  let s=document.getElementById("service").value;
-  let q=document.getElementById("qty").value;
 
-  q=Number(q);
+/* INSTAGRAM ORDER */
+function igOrder(){
+  let n=document.getElementById("ig_name").value;
+  let l=document.getElementById("ig_link").value;
+  let q=document.getElementById("ig_qty").value;
 
-  let price=0;
+  let msg=
+`🔥 INSTAGRAM ORDER
+-------------------
+👤 Name: ${n}
+🔗 Link: ${l}
+📦 Qty: ${q}
+💰 Rate: 199 PKR / 1000
+-------------------
+🚀 Start Order`;
 
-  if(s=="ig") price=199;
-  else price=51;
-
-  if(!q || q<=0){
-    document.getElementById("result").innerText="Total: 0 PKR";
-    return;
-  }
-
-  let total=(q/1000)*price;
-
-  document.getElementById("result").innerText=
-  "Total: "+total.toFixed(2)+" PKR";
+  window.open("https://wa.me/923451747872?text="+encodeURIComponent(msg));
 }
+
+/* TIKTOK ORDER */
+function ttOrder(){
+  let n=document.getElementById("tt_name").value;
+  let l=document.getElementById("tt_link").value;
+  let q=document.getElementById("tt_qty").value;
+
+  let msg=
+`🔥 TIKTOK ORDER
+-------------------
+👤 Name: ${n}
+🔗 Link: ${l}
+📦 Qty: ${q}
+💰 Rate: 51 PKR / 1000
+-------------------
+🚀 Start Order`;
+
+  window.open("https://wa.me/923451747872?text="+encodeURIComponent(msg));
+}
+
 </script>
 
 </body>
